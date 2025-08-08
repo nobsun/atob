@@ -1,0 +1,121 @@
+name:                atob
+version:             0.0.1
+github:              nobsun/atob
+license:             BSD3
+author:              Nobuo Yamashita
+maintainer:          nobsun@gmail.com
+copyright:           © 2025, Nobuo Yamashita
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Experiment
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/nobsun/atob#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- unicode-show
+- bytestring
+- utf8-string
+- time
+- hspec
+- main-tester
+- doctest
+- aeson
+- array
+- containers
+- constraints
+- extra
+- fgl
+- fgl-visualize
+- free
+- gloss
+- hmatrix
+- mtl
+- recursion-schemes
+- split
+- text
+- vector
+- directory
+- exceptions
+- filepath
+- process
+- stm
+- list-shuffle
+- brick
+
+language: GHC2021
+
+default-extensions:
+- ImplicitParams
+- ImportQualifiedPost
+- LambdaCase
+- LexicalNegation
+- MultiWayIf
+- NPlusKPatterns
+- OverloadedStrings
+- DataKinds
+- PolyKinds
+- NoStarIsType
+- TypeFamilyDependencies
+- UndecidableInstances
+- CPP
+
+ghc-options:
+- -Wall
+- -Wno-unticked-promoted-constructors
+- -Wno-unused-imports
+- -Wno-unused-top-binds
+- -Wno-orphans
+- -Wno-x-partial
+
+library:
+  source-dirs: src
+
+executables:
+  a_b:
+    main:               Main.hs
+    source-dirs:        app/a_b
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - atob
+
+  ex11:
+    main:               Main.hs
+    source-dirs:        app/ex11
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - atob
+
+  # atob:
+  #   main:                Main.hs
+  #   source-dirs:         app
+  #   ghc-options:
+  #   - -rtsopts
+  #   dependencies:
+  #   - atob
+
+tests:
+  atob-test:
+    main:                spec.hs
+    source-dirs:         test
+    dependencies:
+    - atob
+    - hspec
+    - main-tester
+
+  atob-doctest:
+    main:                doctests.hs
+    source-dirs:         test
+    dependencies:
+    - atob
+    - doctest

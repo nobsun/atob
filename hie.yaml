@@ -1,0 +1,28 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "atob:lib"
+
+    - path: "./app/a_b/Main.hs"
+      component: "atob:exe:a_b"
+
+    - path: "./app/a_b/Paths_atob.hs"
+      component: "atob:exe:a_b"
+
+    - path: "./app/Main.hs"
+      component: "atob:exe:atob"
+
+    - path: "./app/Paths_atob.hs"
+      component: "atob:exe:atob"
+
+    - path: "./app/ex11/Main.hs"
+      component: "atob:exe:ex11"
+
+    - path: "./app/ex11/Paths_atob.hs"
+      component: "atob:exe:ex11"
+
+    - path: "./test"
+      component: "atob:test:atob-doctest"
+
+    - path: "./test"
+      component: "atob:test:atob-test"
