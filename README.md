@@ -18,5 +18,5 @@ brama
 brbma
     a=b
 brbmb
-Output: brbm
+Output: brbmb
 ```
