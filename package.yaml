@@ -80,6 +80,30 @@ library:
   source-dirs: src
 
 executables:
+  ex14:
+    main:               Main.hs
+    source-dirs:        app/ex14
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - atob
+
+  ex13:
+    main:               Main.hs
+    source-dirs:        app/ex13
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - atob
+
+  ex12:
+    main:               Main.hs
+    source-dirs:        app/ex12
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - atob
+
   a_b:
     main:               Main.hs
     source-dirs:        app/a_b

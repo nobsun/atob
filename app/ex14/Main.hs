@@ -21,10 +21,7 @@ import List.Shuffle
 import AtoB
 
 solve :: String -> String
-solve = map conv where
-    conv = \ case
-        'a' -> 'b'
-        c   -> c
+solve s = fromRLE [ (c,n) | (c,n) <- toRLE s, 'a' /= c || n == 1 ]
 
 testCaseIns :: [String]
 testCaseIns = filter phi $ flip replicateM "abc" =<< [1 .. 7]
@@ -45,7 +42,6 @@ main = do
             (xs,ys) -> map (either id id) (xs ++ bool [head ys] ys (null ys))
         psi i (x,y) = (i,x,y)
 
-
 type RLE a = [(a, Int)]
 
 toRLE :: Eq a => [a] -> RLE a
@@ -54,6 +50,9 @@ toRLE = unfoldr psi where
         x:xs -> case spanCount (x ==) xs of
             (m,ys) -> Just ((x, succ m), ys)
         _    -> Nothing
+
+fromRLE :: RLE a -> [a]
+fromRLE = (uncurry (flip replicate) =<<)
 
 spanCount :: (a -> Bool) -> [a] -> (Int, [a])
 spanCount p = \ case

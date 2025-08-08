@@ -9,17 +9,29 @@ cradle:
     - path: "./app/a_b/Paths_atob.hs"
       component: "atob:exe:a_b"
 
-    - path: "./app/Main.hs"
-      component: "atob:exe:atob"
-
-    - path: "./app/Paths_atob.hs"
-      component: "atob:exe:atob"
-
     - path: "./app/ex11/Main.hs"
       component: "atob:exe:ex11"
 
     - path: "./app/ex11/Paths_atob.hs"
       component: "atob:exe:ex11"
+
+    - path: "./app/ex12/Main.hs"
+      component: "atob:exe:ex12"
+
+    - path: "./app/ex12/Paths_atob.hs"
+      component: "atob:exe:ex12"
+
+    - path: "./app/ex13/Main.hs"
+      component: "atob:exe:ex13"
+
+    - path: "./app/ex13/Paths_atob.hs"
+      component: "atob:exe:ex13"
+
+    - path: "./app/ex14/Main.hs"
+      component: "atob:exe:ex14"
+
+    - path: "./app/ex14/Paths_atob.hs"
+      component: "atob:exe:ex14"
 
     - path: "./test"
       component: "atob:test:atob-doctest"
